@@ -73,10 +73,11 @@ def fpsPreprocess(filePath,location,num):
 		if(element[-2]!="FPS:"):
 			str = fileobject.readline()
 			continue
-		result.append(int(element[-1]))
+		result.append(float(element[-1]))
 		str = fileobject.readline()
 
 	return result
 if __name__ == '__main__':
-	res = sttPreprocess("./stt.txt","4G")
+	tpuRes = throughputPreprocess("./clientlog.txt","LINE",50)
+	fpsRes = fpsPreprocess("./clientlog.txt","LINE",50)
 	a = 1
